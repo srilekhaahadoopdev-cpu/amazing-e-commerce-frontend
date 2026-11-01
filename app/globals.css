@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Brand Primary */
+    --color-brand-primary: #0F172A;
+    --color-brand-primary-hover: #1E293B;
+    --color-brand-secondary: #1E3A8A;
+
+    /* Brand Accents & Interactive */
+    --color-accent-amber: #F59E0B;
+    --color-accent-amber-hover: #D97706;
+    --color-accent-indigo: #4F46E5;
+
+    /* Deals & Badges */
+    --color-offer-gradient-start: #FF7A00;
+    --color-offer-gradient-end: #FF3B30;
+    --color-savings-badge-bg: #FEF3C7;
+    --color-savings-badge-text: #92400E;
+
+    /* System Feedback */
+    --color-success: #059669;
+    --color-success-bg: #ECFDF5;
+    --color-error: #DC2626;
+    --color-error-bg: #FEF2F2;
+
+    /* Surfaces & Backgrounds */
+    --color-bg-canvas: #F8FAFC;
+    --color-bg-card: #FFFFFF;
+    --color-bg-subtle: #F1F5F9;
+
+    /* Neutral Typography & Borders */
+    --color-text-main: #0F172A;
+    --color-text-secondary: #475569;
+    --color-text-muted: #94A3B8;
+    --color-border: #E2E8F0;
+    --color-border-hover: #CBD5E1;
+  }
+}
+
+body {
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Number tabular figures for crisp price alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Micro-interaction classes from UI/UX Design System */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: var(--color-brand-primary);
+  color: #ffffff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-amber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: var(--color-accent-amber);
+  color: #0F172A;
+  border: 1px solid #D97706;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-amber:hover {
+  background-color: var(--color-accent-amber-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-amber:active {
+  transform: scale(0.97);
+}
+
+/* Hide scrollbar for category pills */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Cart Bump Animation */
+@keyframes cartBump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.animate-cart-bump {
+  animation: cartBump 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
